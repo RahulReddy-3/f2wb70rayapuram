@@ -3,4 +3,16 @@ extends layout
 block content
   h1= title
   p Welcome to Rahul's Page #{title}
-  button(type="button", class="btnv btn-danger") Press Me
+  button(type="button", class="btn btn-danger" onclick="doBump()") Press Me
+  div(id="bump")  Bump the count
+  script.
+    var bump = 1;
+    var count = 0;
+
+
+    function doBump()
+    {
+      count = count + bump;
+      bump = bump + 1;
+      document.getElementById("bump").innerHTML="Count  "+ count +"  with bump "+ bump;
+    }
