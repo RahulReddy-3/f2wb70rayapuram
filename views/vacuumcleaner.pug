@@ -7,5 +7,9 @@ block content
   div(class="container-fluid")
   div(class="row")
    each value, index in results
-    div(class="col-sm-2")  ProductID #{value.ProductID} ,  Date #{value.DateOfManufacturing}, Warranty #{value.WarrantyinYears}
-
+    div(class="col-sm-2" onclick=`buy(${index})`)  ProductID #{value.ProductID} ,  Date #{value.DateOfManufacturing}, Warranty #{value.WarrantyinYears}
+   script.
+    function buy(index)
+    {
+      alert(`Your purchased Item ${index+1}`)
+    }
